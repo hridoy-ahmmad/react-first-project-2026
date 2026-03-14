@@ -3,5 +3,5 @@
 
 
 .btn-status{
-  @apply py-1 px-6 bg-green-100  font-semibold cursor-pointer;
+  @apply py-1 px-5 bg-green-100  font-semibold cursor-pointer;
 }

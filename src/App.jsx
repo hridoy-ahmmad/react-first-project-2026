@@ -1,4 +1,5 @@
 
+import { useState } from 'react'
 import './App.css'
 import Footer from './components/Footer'
 import Nav from './components/Nav'
@@ -7,11 +8,14 @@ import ToggleBar from './components/ToggleBar'
 
 function App() {
 
+  const [active, setActive] = useState('All')
+
+
   return (
     <>
       <Nav></Nav>
       <StatusBar></StatusBar>
-      <ToggleBar></ToggleBar>
+      <ToggleBar active={active} setActive={setActive}></ToggleBar>
       <Footer></Footer>
     </>
   )
