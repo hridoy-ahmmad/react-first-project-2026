@@ -11,7 +11,9 @@ const ToggleBar = ({ active, setActive }) => {
                 {
                     btns.map((btn, index) => {
                         return (
-                            <button className={`${index === 0 && 'rounded-l-md'} ${index ===btns.length-1 && 'rounded-r-md'} btn-status  mr-[2px] ${active === btn && 'bg-green-600! text-white'
+                            <button
+                            type='button'
+                            className={`${index === 0 && 'rounded-l-md'} ${index === btns.length - 1 && 'rounded-r-md'} btn-status  mr-[2px] ${active === btn && 'bg-green-600! text-white'
                                 }`}
                                 onClick={() => setActive(btn)}
                             >{btn}</button>
