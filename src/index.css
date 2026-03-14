@@ -1,2 +1,7 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+
+.btn-status{
+  @apply py-1 px-6 bg-green-100  font-semibold cursor-pointer;
+}
