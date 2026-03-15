@@ -10,12 +10,10 @@ const IssuesSection = ({ data, active, setData }) => {
 
     return (
         <Container>
-            <div className='grid grid-cols-3 gap-3'>
-                {
-                    filteredData.map((d, ind) => {
-                        return <IssuCard key={ind} d={d} initialData={initialData} setData={setData}></IssuCard>
-                    })
-                }
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                {filteredData.map((d, ind) => (
+                    <IssuCard key={ind} d={d} initialData={initialData} setData={setData} />
+                ))}
             </div>
         </Container>
     );

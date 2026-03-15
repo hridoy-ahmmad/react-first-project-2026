@@ -7,7 +7,7 @@ const ToggleBar = ({ active, setActive }) => {
 
     return (
         <Container>
-            <div className='text-right my-8'>
+            <div className='flex flex-wrap md:justify-end my-8 space-y-2'>
                 {
                     btns.map((btn, index) => {
                         return (
