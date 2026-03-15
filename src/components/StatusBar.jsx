@@ -8,8 +8,6 @@ const StatusBar = ({ data }) => {
     const pendingData = initialData.filter(el => el.status == 'Pending')
     const reviewedData = initialData.filter(el => el.status == 'Reviewed')
     
-
-
     return (
         <Container>
             <div className=" py-10">

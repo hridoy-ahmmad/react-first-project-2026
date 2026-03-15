@@ -16,11 +16,9 @@ const loadData = async () => {
 }
 
 function App() {
-  const [data, setData] = useState(loadData())
+  const initialData = loadData()
+  const [data, setData] = useState(initialData)
   const [active, setActive] = useState('All')
-
- 
-
 
   return (
     <>
@@ -31,7 +29,7 @@ function App() {
       <ToggleBar active={active} setActive={setActive}></ToggleBar>
 
       <Suspense fallback={<Container> <Loading></Loading></Container>}>
-        <IssuesSection data={data} active={active}></IssuesSection>
+        <IssuesSection data={data} active={active} setData={setData}></IssuesSection>
       </Suspense>
       <Footer></Footer>
     </>

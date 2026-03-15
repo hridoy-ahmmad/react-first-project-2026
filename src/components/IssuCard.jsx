@@ -1,9 +1,12 @@
 import React from 'react';
 
 const IssuCard = ({ d }) => {
+
+
+
     const { ticketId, subject, description, status, category, priority, createdAt, assignedTo, requestedBy, userImg } = d
     return (
-        <div className="max-w-md bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+        <div  className="max-w-md bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
 
             {/* Header */}
             <div className="flex items-center justify-between mb-5">
@@ -26,7 +29,7 @@ const IssuCard = ({ d }) => {
                 </div>
 
                 {/* Status Badge */}
-                <span className={`px-3 py-1 text-xs font-semibold rounded-full  ${status === 'Submitted' ? 'bg-green-100 text-green-500' : status === 'Pending' ? 'bg-yellow-100 text-yellow-700' : status === 'Reviewed' ? 'bg-amber-100 text-amber-600' : '' } `}>
+                <span className={`px-3 py-1 text-xs font-semibold rounded-full  ${status === 'Submitted' ? 'bg-green-100 text-green-500' : status === 'Pending' ? 'bg-yellow-100 text-yellow-700' : status === 'Reviewed' ? 'bg-amber-100 text-amber-600' : ''} `}>
                     {status}
                 </span>
             </div>
@@ -52,9 +55,6 @@ const IssuCard = ({ d }) => {
 
             {/* Footer */}
             <div className="flex items-center justify-between pt-3 border-t border-gray-100">
-                <button className="text-sm font-medium text-green-600 hover:text-green-700 transition">
-                    View Details
-                </button>
 
                 <span className="text-xs text-gray-400">
                     Issue ID: {ticketId}

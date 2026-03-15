@@ -2,7 +2,7 @@ import React, { use } from 'react';
 import Container from './Container';
 import IssuCard from './IssuCard';
 
-const IssuesSection = ({ data, active }) => {
+const IssuesSection = ({ data, active, setData }) => {
     const initialData = use(data)
 
     const filteredData = active === 'All' ? initialData : initialData.filter(el => el.status == active)
@@ -13,7 +13,7 @@ const IssuesSection = ({ data, active }) => {
             <div className='grid grid-cols-3 gap-3'>
                 {
                     filteredData.map((d, ind) => {
-                        return <IssuCard key={ind} d={d} data={data} ></IssuCard>
+                        return <IssuCard key={ind} d={d} initialData={initialData} setData={setData}></IssuCard>
                     })
                 }
             </div>
