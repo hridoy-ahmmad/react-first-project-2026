@@ -16,19 +16,22 @@ const loadData = async () => {
 }
 
 function App() {
-
+  const [data, setData] = useState(loadData())
   const [active, setActive] = useState('All')
+
+ 
 
 
   return (
     <>
       <Nav></Nav>
-      <StatusBar></StatusBar>
+      <Suspense>
+        <StatusBar data={data} setData={setData} ></StatusBar>
+      </Suspense>
       <ToggleBar active={active} setActive={setActive}></ToggleBar>
-      <Suspense fallback={<Container>
-        <Loading></Loading>
-      </Container>}>
-        <IssuesSection loadData={loadData()}></IssuesSection>
+
+      <Suspense fallback={<Container> <Loading></Loading></Container>}>
+        <IssuesSection data={data} active={active}></IssuesSection>
       </Suspense>
       <Footer></Footer>
     </>

@@ -26,7 +26,7 @@ const IssuCard = ({ d }) => {
                 </div>
 
                 {/* Status Badge */}
-                <span className="px-3 py-1 text-xs font-semibold rounded-full bg-yellow-100 text-yellow-700">
+                <span className={`px-3 py-1 text-xs font-semibold rounded-full  ${status === 'Submitted' ? 'bg-green-100 text-green-500' : status === 'Pending' ? 'bg-yellow-100 text-yellow-700' : status === 'Reviewed' ? 'bg-amber-100 text-amber-600' : '' } `}>
                     {status}
                 </span>
             </div>
@@ -61,7 +61,7 @@ const IssuCard = ({ d }) => {
                 </span>
             </div>
 
-        </div>
+        </div >
     );
 };
 
